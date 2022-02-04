@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Authorizaton</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <script src="scripts/password.js"></script>
+  </head>
+  <body>
+   <div class="auth">
+       <h1>Account Login</h1>
+       <div class="form">
+           username<br>
+           <input type="text">
+        </div>
+       <div class="form">
+           <br>password<br>
+           <input type="password" id="password-input">
+           <a href="#" class="password-symbol" onclick="return setVisibility(this);"></a>
+        </div>
+       <div class="form">
+           <input type="checkbox"><span>Remember me</span>
+           <a href="#"><span>Forgot Password?</span></a>
+       </div>
+       <div class="form">
+           <input type="submit" value="Login">
+       </div>
+   </div>
+  </body>
+</html>
