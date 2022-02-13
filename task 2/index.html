@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <script src="script/zoom.js"></script>
+    <title>Trial assignments</title>
+  </head>
+  <body>
+      <div class="layout">
+          <div class="product">
+          <div class="product__preview">
+              <div class="group__picture">
+                    <img src="img/first.png" alt="" onmouseover="setZoomImage('zoom', 'img/first.png')"/> 
+                    <img src="img/second.webp" alt="" onmouseover="setZoomImage('zoom', 'img/second.webp')"/> 
+                    <img src="img/third.webp" alt="" onmouseover="setZoomImage('zoom', 'img/third.webp')"/>
+              </div>
+              <div class="zoom__picture">
+                  <img src="img/first.png" alt="" id="zoom"/> 
+            </div>
+          </div>
+          <div class="product__description">
+           <h2>рубашка Medicine</h2>
+           <div class="product__tags">
+            <ul>
+             <li><a href ="#">Рубашки Medicine</a></li>
+             <li><a href ="#">Все модели Medicine</a></li>
+             <li><a href ="#">Рубашки</a></li>
+            </ul>
+           </div>
+           <div class="product__price">
+              <div class="product__price-actual">
+                  <span class="product__price-old">2 699</span>
+                  <span class="product__price-new price">2 499</span>
+               </div>
+              <div class="product__price-discount">
+                  <span class="product__price-discount-cost price">2 227</span>
+                  <span class="product__price-discount-text">- с промокодом</span>
+               </div>
+           </div>
+           <div class="product__info">
+               <div class="product__info-item">
+                   <img src="logo/accept.png" alt="#"/>
+                    В наличии в магазине<a href="#">Lamoda </a>
+               </div>
+               <div class="product__info-item">
+                   <img src="logo/delivery.png" alt="#"/>
+                   Бесплатная доставка
+               </div>
+           </div>
+           <div class="product__action">
+               <button class="action__button action__button_blue">в магазин</button>
+               <button class="action__button">в избранное</button>
+              </div>
+              <div class ="product__text">
+              <p>Рубашка Medicine выполнена из вискозной ткани с клетчатым узором.
+                 Детали: прямой крой; отложной воротник; планка и манжеты на
+                пуговицах; карман на груди.
+             </p>
+          </div>
+              <div class="product__share">
+                  <span class="product__share-title">Поделиться:</span>
+                  <div class="product__share-list">
+                      <a href="#">
+                          <img src="logo/vk.png" alt="vk">
+                      </a>
+                      <a href="#">
+                          <img src="logo/facebook.png" alt="fb">
+                      </a>
+                      <a href="#">
+                          <img src="logo/google.png" alt="google">
+                      </a>
+                  </div>
+                  <div id="product__share-count">
+                      <span class="product__share-count-text">123</span>
+                  </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
