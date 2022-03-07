@@ -9,7 +9,8 @@
   Все запросы, передачи по GET (XSS атаки, SQL Injection) защищены приведением типов, 
   так как я использую лишь int значения, подставить в запрос какие либо символы, кроме цифр, невозможно: 
   
-  $query = 'SELECT c.category_id,
+  ```sql
+  $query = 'SELECT c.category_id, 
                    c.name as category_name,
                    c.url
               FROM products as p
