@@ -1,0 +1,92 @@
+.card {
+    
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
+    position: relative;
+    display: inline-block;
+    margin: 0 45px 12px 0;
+    width: 240px;
+    padding: 10px;
+    text-align: center;
+    height: 280px;
+    background-color:azure;
+    font-family: "Circe";
+    overflow:hidden;
+    font-size: 18px;
+    margin-top: 50px;
+}
+
+.card a {
+    text-decoration-line: none;
+}
+
+a + .button__counter {
+    display: block;
+    text-align: center;
+}
+
+.button__counter {
+    display: inline-flex;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+
+.button__counter span {
+    width: 40px;
+    text-align: center;
+    border-top: 2px solid #d9d9d9;
+    border-bottom: 2px solid #d9d9d9;
+    background: #d9d9d9;
+}
+
+.button__counter input[type=button] {
+    display: inline-block;
+    font-size: 30px;
+    width: 30px;
+    border: 2px solid #d9d9d9;
+    background: #fff;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+.card__image {
+        height: 230px;
+        max-width: 220px;
+        border: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+}
+    
+.card__category {
+        color: black;
+        text-decoration-line: none;
+        
+}
+    
+.card__name {
+    font-size: 18px;
+    color: black;
+}
+
+.category__name {
+    display: inline-block;
+}
+
+.button-back {
+    display: inline-block;
+    cursor: pointer;
+    color: #131313;
+    background: #ffffff;
+    border: 2px solid #d9d9d9;
+    padding: 0 15px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    min-width: 240px;
+    letter-spacing: 0.6px;
+    margin-right: 10px;
+}

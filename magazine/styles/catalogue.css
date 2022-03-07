@@ -1,0 +1,27 @@
+.cards {
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.cards__page-title {
+    font-weight: 500;
+    margin-bottom: 30px; 
+}
+
+.cards__item {
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
+    position: relative;
+    display: inline-block;
+    margin: 0 8px 12px 0;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    background-color:beige;
+}
+
+.cards__item a {
+    text-decoration-line: none;
+    color: black;
+}
