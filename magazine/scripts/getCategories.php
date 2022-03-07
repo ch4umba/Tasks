@@ -1,6 +1,6 @@
 <?php
         
-    $hostname="localhost";
+    $hostname="localhost"; // Не думаю, что тут комментарии нужны, просто вывод карточек
 	$username="root";
 	$password="";
 	$dbname="mydb";
@@ -23,7 +23,7 @@
     $result = mysqli_query($link, $query);
     
     if ($result == false) {
-        print("Произошла ошибка при выполнении запроса");
+        print("Произошла ошибка при выполнении запроса"); 
     }
     for ($i = 0; $i < mysqli_num_rows($result); $i++) {
         $row = mysqli_fetch_array($result);

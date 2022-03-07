@@ -1,0 +1,63 @@
+.feedback {
+    display: block;
+    margin-top: 50px;
+}
+
+.tab {
+    display: block;
+}
+
+.error {
+    display: block;
+    margin-top: 10px;
+    color:red;
+}
+
+.feedback__name input {
+    border: 1px solid black;
+}
+
+.feedback__email input {
+    border: 1px solid black;
+}
+
+.feedback__birth select {
+    border: 1px solid black;
+}
+
+
+.feedback__sex input {
+    border: 1px solid black;
+}
+
+input + input {
+    margin-left: 20px;
+}
+
+
+.feedback__topic input {
+    border: 1px solid black;
+}
+
+.feedback__text textarea {
+    border: 1px solid black;
+}
+
+.feedback__agreement {
+    margin-top: 20px;
+}
+
+.feedback__agreement input {
+    margin-left: 5px;
+    border: 1px solid black;
+}
+
+.feedback__submit {
+    margin-top: 20px;
+}
+
+.feedback__submit input {
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+}

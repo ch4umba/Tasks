@@ -1,6 +1,6 @@
 <?php
 
-function setPhoto($main_photo, $alt, $photos, $alts) {  
+function setPhoto($main_photo, $alt, $photos, $alts) {  // Выводим основное и дополнительные фото на страницу
     $main_dir = '/magazine/img/' . $main_photo;
     echo '<img src=\'' . $main_dir . '\' alt=\'' . $alt . '\' onmouseover="setZoomImage(\'zoom\', \'' . $main_dir . '\')"/>';
     for ($i = 0; $i < count($photos); $i++) {
@@ -9,7 +9,7 @@ function setPhoto($main_photo, $alt, $photos, $alts) {
     }
 }
 
-function redirecting($link) {
+function redirecting($link) { // Редирект для кнопки на предыдущую страницу
     $qh = "SELECT name,
               url
          FROM category
@@ -19,7 +19,7 @@ function redirecting($link) {
     return '/magazine/scripts/category.php' . '?c_id=' . intval($_GET['c_id']) . '&p=1';
 }
 
-function connectToDB($hostname, $username, $password, $dbname) {
+function connectToDB($hostname, $username, $password, $dbname) { // Подключение к БД
     $link = mysqli_connect($hostname,$username, $password, $dbname);
     if (!$link) {
         die('Не удалось соединиться : ' . mysql_error());
@@ -27,7 +27,7 @@ function connectToDB($hostname, $username, $password, $dbname) {
     return $link;
 }
 
-function setCategory ($category, $url, $c_id) {
+function setCategory ($category, $url, $c_id) { // Вывод категорий
     for ($i = 0; $i < count($category); $i++) {
         $dir = '/magazine/catalogue/' . $url[$i] . '?c_id=' . $c_id[$i] . '&p=1';
         echo '<li><a href ="' . $dir . '">' . $category[$i] . '</a></li>';
@@ -35,8 +35,8 @@ function setCategory ($category, $url, $c_id) {
 }
 
 
-    $link = connectToDB("localhost", "root", "", "mydb");
-    $query = 'SELECT p.product_id,
+    $link = connectToDB("localhost", "root", "", "mydb"); // Запрос на основную информацию
+    $query = 'SELECT p.product_id,  
                      p.name,
 	                 p.price,
                      p.price_sale,
@@ -74,14 +74,14 @@ function setCategory ($category, $url, $c_id) {
            LEFT JOIN photos as ph
                   ON ph.photo_id = pph.photo_id
                WHERE p.main_photo_id != ph.photo_id
-                 AND p.product_id = ' . intval($_GET["p_id"]);
+                 AND p.product_id = ' . intval($_GET["p_id"]); // Запрос на фотографии
     $result = mysqli_query($link, $query);
     $photos = array();
     $alts = array();
     if ($result == false) {
         print("Произошла ошибка при выполнении взятия картинок");
     } else { 
-        for ($i = 0; $i < mysqli_num_rows($result); $i++) {
+        for ($i = 0; $i < mysqli_num_rows($result); $i++) { // Заполняем массив картинок для последующей вставки
             $row = mysqli_fetch_array($result);
             array_push($photos, $row["photo_url"]);
             array_push($alts, $row["alt_name"]);
@@ -96,7 +96,7 @@ function setCategory ($category, $url, $c_id) {
                   ON pc.product_id = p.product_id
            LEFT JOIN category as c
                   ON c.category_id = pc.category_id
-               WHERE p.product_id =' . intval($_GET['p_id']);
+               WHERE p.product_id =' . intval($_GET['p_id']); // Запрос на категории
     
     $result = mysqli_query($link, $query);
 
@@ -107,7 +107,7 @@ function setCategory ($category, $url, $c_id) {
         $category = array();
         $url = array();
         $c_id = array();
-        for ($i = 0; $i < mysqli_num_rows($result); $i++) {
+        for ($i = 0; $i < mysqli_num_rows($result); $i++) { // Заполняем массив категорий для последующей вставки
             $row = mysqli_fetch_array($result);
             array_push($category, $row["category_name"]);
             array_push($url, $row["url"]);

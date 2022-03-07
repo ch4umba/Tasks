@@ -1,6 +1,6 @@
 <?php
     
-function showCards($result) {
+function showCards($result) { // Вывод карточек
     for ($i = 0; $i < mysqli_num_rows($result); $i++) {
             $row = mysqli_fetch_array($result); 
             echo '<a href=/magazine/scripts/product.php?' . 'p_id=' . $row["product_id"] . "&c_id=" . intval($_GET['c_id']) .
@@ -14,11 +14,11 @@ function showCards($result) {
         }
 }
 
-function redirecting($link) {
+function redirecting($link) { // Выходим из категории в список категорий
     return '/magazine/';
 }
 
-function getProducts() {
+function getProducts() { // Получаем продукты постранично
     $start = (intval($_GET['p']) - 1) * 12;
     $end = intval($_GET['p']) * 12;
     return "SELECT p.product_id,
@@ -43,7 +43,7 @@ function getProducts() {
               ' LIMIT ' . $start . ', ' . $end;
 }
 
-function clickMinusButton() {
+function clickMinusButton() { // Переход на прошлую страницу
     $value = intval($_GET["p"]);
     $value--;
     if ($value < 1) {
@@ -56,7 +56,7 @@ function clickMinusButton() {
     return $str . strval($value);
 }
 
-function clickPlusButton() {
+function clickPlusButton() { // Переход на следующую страницу
     $value = intval($_GET["p"]);
     $value++;
     $str = '//' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
@@ -78,7 +78,7 @@ function clickPlusButton() {
     $qh = "SELECT name,
                   url
              FROM category
-            WHERE category_id = " . intval($_GET['c_id']);
+            WHERE category_id = " . intval($_GET['c_id']); // Для заголовка
     $rh = mysqli_query($link, $qh);
     $rh = mysqli_fetch_array($rh);
     $result = mysqli_query($link, getProducts());
