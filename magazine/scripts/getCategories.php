@@ -1,4 +1,5 @@
 <?php
+        
     $hostname="localhost";
 	$username="root";
 	$password="";
@@ -26,7 +27,7 @@
     }
     for ($i = 0; $i < mysqli_num_rows($result); $i++) {
         $row = mysqli_fetch_array($result);
-        echo '<div class="cards__item"><a href="' . $row['url'] . '?c_id=' . $row["category_id"] . "&p=1" . '">' . $row['category_name'] 
+        echo '<div class="cards__item"><a href="' . "/magazine/scripts/category.php?c_id=" . $row["category_id"] . "&p=1" . '">' . $row['category_name'] 
             . '(' . $row['products_count'] . ')' . '</a></div>';
     }
 ?>

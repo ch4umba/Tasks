@@ -2,14 +2,12 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <link href="/styles/style.css" rel="stylesheet" type="text/css">
+    <link href="/magazine/styles/style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="/scripts/notify.js"></script>
-    <script src="/scripts/zoom.js"></script>
+    <script src="/magazine/scripts/notify.js"></script>
+    <script src="/magazine/scripts/zoom.js"></script>
     <?php
-      $dir = basename(__DIR__);
-      include $_SERVER['DOCUMENT_ROOT'] . "/scripts/getInformation.php" 
-          
+      include $_SERVER['DOCUMENT_ROOT'] . "/magazine/scripts/getInformation.php"  
       ?>
     <script type="text/javascript">
         jQuery(document).ready(function() {
@@ -56,7 +54,7 @@
                     <?php setPhoto($mp, $alt, $photos, $alts); ?>
               </div>
               <div class="zoom__picture">
-                  <img src='<?php echo '/img/' . $mp ?>' alt='<?php echo $alt ?>' id="zoom"/> 
+                  <img src='<?php echo '/magazine/img/' . $mp ?>' alt='<?php echo $alt ?>' id="zoom"/> 
             </div>
           </div>
           <div class="product__description">
@@ -103,13 +101,13 @@
                   <span class="product__share-title">Поделиться:</span>
                   <div class="product__share-list">
                       <a href="#">
-                          <img src="/logo/vk.png" alt="vk">
+                          <img src="/magazine/logo/vk.png" alt="vk">
                       </a>
                       <a href="#">
-                          <img src="/logo/facebook.png" alt="fb">
+                          <img src="/magazine/logo/facebook.png" alt="fb">
                       </a>
                       <a href="#">
-                          <img src="/logo/google.png" alt="google">
+                          <img src="/magazine/logo/google.png" alt="google">
                       </a>
                   </div>
                   <div id="product__share-count">

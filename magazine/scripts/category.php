@@ -8,7 +8,7 @@
     <?php
       include $_SERVER['DOCUMENT_ROOT'] . "/magazine/scripts/getProducts.php";
       if (isset($_GET['p']) && $_GET['p'] <= 0) {
-            header("Location: " . '//' . $_SERVER['HTTP_HOST'] . '/magazine/catalogue/');
+            header("Location: " . '//' . $_SERVER['HTTP_HOST'] . '/magazine/');
             exit ();
         }
       ?>

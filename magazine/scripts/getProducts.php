@@ -3,7 +3,7 @@
 function showCards($result) {
     for ($i = 0; $i < mysqli_num_rows($result); $i++) {
             $row = mysqli_fetch_array($result); 
-            echo '<a href=/magazine/catalogue/' . $row["main_url"] . '/' .  $row["product_url"] . '/?p_id=' . $row["product_id"] . "&c_id=" . intval($_GET['c_id']) .
+            echo '<a href=/magazine/scripts/product.php?' . 'p_id=' . $row["product_id"] . "&c_id=" . intval($_GET['c_id']) .
                 '><div class="card">' .
                 '<div class="card__image">' .
                     '<img class="card__image" src="/magazine/img/'. $row["photo_url"] .'"' . ' alt="' . $row["alt_name"] . '">' .
@@ -15,7 +15,7 @@ function showCards($result) {
 }
 
 function redirecting($link) {
-    return '/magazine/catalogue';
+    return '/magazine/';
 }
 
 function getProducts() {

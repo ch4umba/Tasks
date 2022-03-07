@@ -16,7 +16,7 @@ function redirecting($link) {
         WHERE category_id = " . intval($_GET['c_id']);
     $rh = mysqli_query($link, $qh);
     $rh = mysqli_fetch_array($rh);
-    return '/magazine/catalogue/' . $rh['url'] . '/?c_id=' . intval($_GET['c_id']) . '&p=1';
+    return '/magazine/scripts/category.php' . '?c_id=' . intval($_GET['c_id']) . '&p=1';
 }
 
 function connectToDB($hostname, $username, $password, $dbname) {
@@ -48,7 +48,7 @@ function setCategory ($category, $url, $c_id) {
                 FROM products as p
                 LEFT JOIN photos as ph
 	              ON ph.photo_id = p.main_photo_id
-               WHERE p.url = "' . $dir . '"';
+               WHERE p.product_id = ' . intval($_GET["p_id"]);
     $result = mysqli_query($link, $query);
 
     if ($result == false) {
@@ -74,7 +74,7 @@ function setCategory ($category, $url, $c_id) {
            LEFT JOIN photos as ph
                   ON ph.photo_id = pph.photo_id
                WHERE p.main_photo_id != ph.photo_id
-                 AND p.url = "' . $dir . '"';
+                 AND p.product_id = ' . intval($_GET["p_id"]);
     $result = mysqli_query($link, $query);
     $photos = array();
     $alts = array();
